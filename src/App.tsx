@@ -20,7 +20,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [theme, setTheme] = useState<string | null>(null);
+  const [theme, setTheme] = useState<string>("light"); // Initialize with a default value
 
   const changeTheme = () => {
     if (theme === "dark") {
@@ -51,12 +51,9 @@ function App() {
   return (
     <div className='min-h-screen font-sans text-sm text-blue-700 md:text-lg xl:text-xl'>
       <Header currTheme={theme} handleThemeChange={changeTheme} />
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
+      <RouterProvider router={router} />
     </div>
   );
 }
 
 export default App;
-
